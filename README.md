@@ -12,7 +12,6 @@ passcode bypass for ios 12-16 on macos
     <strong><a href="https://twitter.com/hackt1vator">Twitter</a></strong>
     •
     <strong><a   href="https://hackt1vator.github.io">Website</a></strong>
-<h3 align="center">On A11 and A10 devices don´t set a passcode after bypass</h3>
 <h3 align="center">Here you can download the Palera1n loader ipa: <strong><a href="https://nightly.link/palera1n/loader/workflows/build/main/palera1n.zip">Palera1n.ipa</a></strong></h3>
 <h3 align="center">!!!Warning! This is for educational porpuse only!!!</h3>
 <h3 align="center">Here you can donate the developer: <strong><a href="https://www.buymeacoffee.com/Hacktivator">buymeacoffee</a></strong></h3>
