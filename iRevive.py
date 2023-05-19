@@ -309,7 +309,7 @@ def restore():
             
         showinfo("", "We will now bypass your device. Be sure to jailbreak your device first")
         print("Starting bypass...")
-        os.system("bash ./activate.sh")
+        os.system("bash ./restore.sh")
 
         print("Device is bypassed\n")
         showinfo('bypass Success!', 'Device is now bypassed!')
