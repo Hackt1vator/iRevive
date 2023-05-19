@@ -1,13 +1,13 @@
 # iRevive
-passcode bypass for ios 12-16
+passcode bypass for ios 12-16 on macos
 <h1 align="center">
 
 
-![alt text](https://github.com/Hackt1vator/iFix/blob/main/demoing.png)
+![alt text](https://github.com/Hackt1vator/iRevive/blob/main/demoing.png)
 
 </h1>
 <p align="center">
-    <strong><a href="https://github.com/Hackt1vator/iFix/releases/">releases</a></strong>
+    <strong><a href="https://github.com/Hackt1vator/iRevive/releases/">releases</a></strong>
     •
     <strong><a href="https://twitter.com/hackt1vator">Twitter</a></strong>
     •
@@ -20,17 +20,17 @@ passcode bypass for ios 12-16
 
 # installing
 
-<h3 align"center">install here the Dependencies of Silver, it should work for iFix also: https://www.appletech752.com/dependencies.sh
+<h3 align"center">install here the Dependencies of Silver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
 <h3 align"center">Run bash (drag and drop here the file)
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">download the iFix dmg file from the releases
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">drag and drop the iFix.app to the application folder
+<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">download the dmg file from the releases
+<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">drag and drop the iRevive.app to the application folder
 <h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">Run these commands:
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -r /Applications/iFix.app
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -rd com.apple.quarantine /Applications/iFix.app
-<h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -d com.apple.quarantine /Applications/iFix.app
-<h3 align"center"><h3 align"center">sudo xattr -r com.apple.quarantine /Applications/iFix.app
-<h3 align"center">chmod 755 /Applications/iFix.app
-<h3 align"center">now open the iFix app
+<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -r /Applications/iRevive.app
+<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -rd com.apple.quarantine /Applications/iRevive.app
+<h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -d com.apple.quarantine /Applications/iRevive.app
+<h3 align"center"><h3 align"center">sudo xattr -r com.apple.quarantine /Applications/iRevive.app
+<h3 align"center">chmod 755 /Applications/iRevive.app
+<h3 align"center">now open the iRevive app
 <h3 align"center">new click for ios 12-14 start checkra1n and for ios 15-16 start palera1n
 <h3 align"center">When the device is jailbroken, you can click bypass ios 12-16 
 <h3 align"center">bypass done
@@ -38,18 +38,18 @@ passcode bypass for ios 12-16
 
 # install with python 3 if the steps above didn't work for you
 
-<h3 align"center">install here the Dependencies of Silver, it should work for iFix also: https://www.appletech752.com/dependencies.sh
+<h3 align"center">install here the Dependencies of Silver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
 <h3 align"center">Run bash (drag and drop here the file)
-<h3 align"center">download iFix and unzip it
-<h3 align"center">Open a terminal window and cd to the directory that iFix was downloaded to.
+<h3 align"center">download iRevive and unzip it
+<h3 align"center">Open a terminal window and cd to the directory that iRevive was downloaded to.
 <h3 align"center">Run git init -b main
 <h3 align"center">Run sudo xattr -rd com.apple.quarantine ./*
 <h3 align"center">Run sudo xattr -d com.apple.quarantine ./*
 <h3 align"center">Run sudo chmod 755 ./*
-<h3 align"center">Now cd the device folder inside the iFix folder and run the last 3 commands above again
-<h3 align"center">cd the iFix directory again
+<h3 align"center">Now cd the device folder inside the iRevive folder and run the last 3 commands above again
+<h3 align"center">cd the iRevive directory again
 <h3 align"center">to launch the app, run this in terminal:
-python3 iFix.py
+python3 iRevive.py
 <h3 align"center">new click for ios 12-14 start checkra1n and for ios 15-16 start palera1n
 <h3 align"center">When the device is jailbroken, you can click bypass ios 12-16 
 <h3 align"center">bypass done
