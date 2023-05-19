@@ -18,7 +18,7 @@ passcode bypass for ios 12-16 on macos
 <h3 align="center">Here you can donate the developer: <strong><a href="https://www.buymeacoffee.com/Hacktivator">buymeacoffee</a></strong></h3>
 <h3 align="center">How does it work: It boots the device with multiple patches required. On first run, it'll boot a ramdisk which dumps your onboard blob, creates a fakefs (if using semi tethered), installs the loader app, and patches your kernel. </h3>
 
-# installing
+# installing(macos)
 
 <h3 align"center">install here the Dependencies of Silver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
 <h3 align"center">Run bash (drag and drop here the file)
@@ -36,7 +36,7 @@ passcode bypass for ios 12-16 on macos
 <h3 align"center">bypass done
 
 
-# install with python 3 if the steps above didn't work for you
+# install with python 3 if the steps above didn't work for you(macos)
 
 <h3 align"center">install here the Dependencies of Silver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
 <h3 align"center">Run bash (drag and drop here the file)
