@@ -1,5 +1,5 @@
 # iRevive
-passcode bypass for ios 12-16 on macos
+passcode bypass for ios 12-16 on Linux
 <h1 align="center">
 
 
@@ -17,41 +17,22 @@ passcode bypass for ios 12-16 on macos
 <h3 align="center">Here you can donate the developer: <strong><a href="https://www.buymeacoffee.com/Hacktivator">buymeacoffee</a></strong></h3>
 <h3 align="center">How does it work: It boots the device with multiple patches required. On first run, it'll boot a ramdisk which dumps your onboard blob, creates a fakefs (if using semi tethered), installs the loader app, and patches your kernel. </h3>
 
-# installing(macos)
+# installing(Linux)
 
-<h3 align"center">install here the Dependencies of Silver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
-<h3 align"center">Run bash (drag and drop here the file)
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">download the zip file from the releases and extract it
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">drag and drop the iRevive.app to the application folder
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">Run these commands:
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -r /Applications/iRevive.app
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -rd com.apple.quarantine /Applications/iRevive.app
-<h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -d com.apple.quarantine /Applications/iRevive.app
-<h3 align"center"><h3 align"center">sudo xattr -r com.apple.quarantine /Applications/iRevive.app
-<h3 align"center">chmod 755 /Applications/iRevive.app
-<h3 align"center">now open the iRevive app
-<h3 align"center">new click for ios 12-14 start checkra1n and for ios 15-16 start palera1n
-<h3 align"center">When the device is jailbroken, you can click bypass ios 12-16 
-<h3 align"center">bypass done
-
-
-# install with python 3 if the steps above didn't work for you(macos)
-
-<h3 align"center">install here the Dependencies of Silver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
-<h3 align"center">Run bash (drag and drop here the file)
-<h3 align"center">download iRevive and unzip it
-<h3 align"center">Open a terminal window and cd to the directory that iRevive was downloaded to.
+<h3 align"center">Connect your iphone
+<h3 align"center">Open a terminal and run sudo systemctl stop usbmuxd then run sudo usbmuxd -f -p
+<h3 align"center">download the iRevive folder and extract it
+<h3 align"center">Open a new terminal window and cd to the iRevive folder.(do not close the old terminal)
 <h3 align"center">Run git init -b main
-<h3 align"center">Run sudo xattr -rd com.apple.quarantine ./*
-<h3 align"center">Run sudo xattr -d com.apple.quarantine ./*
 <h3 align"center">Run sudo chmod 755 ./*
-<h3 align"center">Now cd the device folder inside the iRevive folder and run the last 3 commands above again
-<h3 align"center">cd the iRevive directory again
-<h3 align"center">to launch the app, run this in terminal:
-python3 iRevive.py
+<h3 align"center">Now cd the device folder inside the iRevive folder and run sudo chmod 755 ./* again
+<h3 align"center">cd the irevive directory again
+<h3 align"center">to launch the app, run this in terminal: python3 iRevive.py
 <h3 align"center">now click for ios 12-14 start checkra1n and for ios 15-16 start palera1n
 <h3 align"center">When the device is jailbroken, you can click bypass ios 12-16 
 <h3 align"center">save the activation files and restore them after itunes restore
+
+
 
 
 
