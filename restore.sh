@@ -30,7 +30,6 @@ echo "Mounted!"
 
 ./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 chmod 644 /var/mobile/Media/1/files/com.apple.commcenter.device_specific_nobackup.plist
 
-./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 killall backboardd sleep 12
 
 ./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 mv -f /var/mobile/Media/1/files/FairPlay /var/mobile/Library/FairPlay
 

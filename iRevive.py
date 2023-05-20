@@ -84,7 +84,7 @@ def show_popup2():
     button2.pack()
 
 def build_fakefs():
-    messagebox.showinfo("", "Please put the device into dfu")
+    messagebox.showinfo("", "Please put the device first in recovery mode and then into dfu mode after the device is in dfu click ok")
     # Display a message box with a yes/no option
     response = messagebox.askyesno("iphone?", "Do you have a A9 device?")
 
@@ -110,7 +110,7 @@ def build_fakefs():
     messagebox.showinfo("", "After the device boots you can boot the fake fs")
     
 def boot_fakefs():
-    messagebox.showinfo("", "Please put the device into dfu")
+    messagebox.showinfo("", "Please put the device first in recovery mode and then into dfu mode after the device is in dfu click ok")
     # Display a message box with a yes/no option
     response = messagebox.askyesno("iphone?", "Do you have a A9 device?")
 
@@ -148,8 +148,6 @@ def startcheckra1n():
 
 
 
-def showDFUMessage():
-    messagebox.showinfo("Step 1","Put your iDevice into DFU mode.\n\nClick Ok once its ready in DFU mode to proceed.")
     
 
 def enterRecMode():
@@ -206,106 +204,32 @@ def delete():
 
 def save():
 
-    global LAST_CONNECTED_UDID, LAST_CONNECTED_IOS_VER
 
-    # Step 1: Detect connected device
-    print("Searching for connected device...")
-    os.system("idevicepair unpair")
-    os.system("idevicepair pair")
-    os.system("./device/ideviceinfo > ./device/lastdevice.txt")
-    time.sleep(2)
-
-    f = open("./device/lastdevice.txt", "r")
-    fileData = f.read()
-    f.close()
-
-    if "ERROR:" in fileData:
-        # No device was detected, so retry user!
-        print("ERROR: No device found!")
-        messagebox.showinfo("No device detected! 0x404","Try disconnecting and reconnecting your device.")
-        return  # stop function execution here
-    else:
-        # We definitely have something connected...
-
-        # Find the UDID
-        start = 'UniqueDeviceID: '
-        end = 'UseRaptorCerts:'
-        s = str(fileData)
-
-        foundData = s[s.find(start) + len(start):s.rfind(end)]
-        UDID = str(foundData)
-        LAST_CONNECTED_UDID = str(UDID)
-        
-        
+    showinfo("", "We will now save the activation files. Be sure to jailbreak your device first")
+    print("Starting save")
         
 
+    os.system("bash ./save.sh")
+    time.sleep(5)
 
-        if len(UDID) > 38:
-            # Stop automatic detection
-            timerStatus = 0
+    folder_path = "./files"
+    file_name = "activation_record.plist"
+    file_path = os.path.join(folder_path, file_name)
 
-
-                
-        else:
-            print("Couldn't find your device")
-            messagebox.showinfo("","No device connected")
-            return  # stop function execution here
-        showinfo("", "We will now save the activation files. Be sure to jailbreak your device first")
-        print("Starting save")
-
-        os.system("bash ./save.sh")
-
+    if os.path.exists(file_path):
         print("activation files saved\n")
         showinfo('save Success!', 'activation files saved!')
-        
+    else:
+        print("activation files not saved\n")
+        showinfo('save failed!', 'Save faild, try jailbreaking again!')
+
+
+
 
     
 def restore():
 
-    global LAST_CONNECTED_UDID, LAST_CONNECTED_IOS_VER
 
-    # Step 1: Detect connected device
-    print("Searching for connected device...")
-    os.system("idevicepair unpair")
-    os.system("idevicepair pair")
-    os.system("./device/ideviceinfo > ./device/lastdevice.txt")
-    time.sleep(2)
-
-    f = open("./device/lastdevice.txt", "r")
-    fileData = f.read()
-    f.close()
-
-    if "ERROR:" in fileData:
-        # No device was detected, so retry user!
-        print("ERROR: No device found!")
-        messagebox.showinfo("No device detected! 0x404","Try disconnecting and reconnecting your device.")
-        return  # stop function execution here
-    else:
-        # We definitely have something connected...
-
-        # Find the UDID
-        start = 'UniqueDeviceID: '
-        end = 'UseRaptorCerts:'
-        s = str(fileData)
-
-        foundData = s[s.find(start) + len(start):s.rfind(end)]
-        UDID = str(foundData)
-        LAST_CONNECTED_UDID = str(UDID)
-        
-        
-        
-
-
-        if len(UDID) > 38:
-            # Stop automatic detection
-            timerStatus = 0
-
-
-                
-        else:
-            print("Couldn't find your device")
-            messagebox.showinfo("","No device connected")
-            return  # stop function execution here
             
         showinfo("", "We will now bypass your device. Be sure to jailbreak your device first")
         print("Starting bypass...")
@@ -340,7 +264,7 @@ my_label2.place(x=300, y=230)
 
 #label
 my_label3 = Label(frame,
-                 text = "ver 1.0")
+                 text = "ver 1.1")
 my_label3.place(x=10, y=420)
 
 
