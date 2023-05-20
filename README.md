@@ -49,7 +49,7 @@ passcode bypass for ios 12-16 on macos
 <h3 align"center">cd the iRevive directory again
 <h3 align"center">to launch the app, run this in terminal:
 python3 iRevive.py
-<h3 align"center">new click for ios 12-14 start checkra1n and for ios 15-16 start palera1n
+<h3 align"center">now click for ios 12-14 start checkra1n and for ios 15-16 start palera1n
 <h3 align"center">When the device is jailbroken, you can click bypass ios 12-16 
 <h3 align"center">save the activation files and restore them after itunes restore
 
