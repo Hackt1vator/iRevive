@@ -35,25 +35,21 @@ echo "Mounted!"
 
 ./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 chmod 755 /var/mobile/Library/FairPlay
 
-ACT1=$(./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 find /private/var/containers/Data/System -name internal)
+INTERNAL=$(./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 find /private/var/containers/Data/System -name internal)
 
-ACT2=$(./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 find /private/var/containers/Data/System -name activation_records)
+ACTIVATION_RECORDS=$(./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 find /private/var/containers/Data/System -name activation_records)
 
-echo $ACT1 
+ACTIVATION_RECORDS=${INTERNAL%?????????????????}
 
-ACT2=${ACT1%?????????????????} 
+records=$ACTIVATION_RECORDS/Library/activation_records
 
-echo $ACT2 ACT3=$ACT2/Library/internal/data_ark.plist
+./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 mkdir $records
 
-ACT4=$ACT2/Library/activation_records 
+./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 mv -f /var/mobile/Media/1/files/activation_record.plist $records/activation_record.plist
 
-./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 mkdir $ACT4
+./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 chmod 755 $records/activation_record.plist
 
-./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 mv -f /var/mobile/Media/1/files/activation_record.plist $ACT4/activation_record.plist
-
-./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 chmod 755 $ACT4/activation_record.plist
-
-./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 chflags uchg $ACT4/activation_record.plist
+./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 chflags uchg $records/activation_record.plist
 
 ./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 chflags nouchg /var/wireless/Library/Preferences/com.apple.commcenter.device_specific_nobackup.plist
 
