@@ -52,17 +52,17 @@ def show_popup():
     popup.geometry("+{}+{}".format(position_right, position_down))
 
     # create larger buttons
-    button1 = tk.Button(popup, text="build fake fs", command=build_fakefs, width=20, height=5)
+    button1 = tk.Button(popup, text="Build Fake FS", command=build_fakefs, width=20, height=5)
     button1.pack(pady=10)
 
-    button2 = tk.Button(popup, text="boot fake fs", command=boot_fakefs, width=20, height=5)
+    button2 = tk.Button(popup, text="Boot Fake FS", command=boot_fakefs, width=20, height=5)
     button1.pack(pady=10)
     button2.pack()
     
 def show_popup2():
     popup = tk.Toplevel()
     popup.geometry("300x300")  # set the width and height of the window
-    popup.title("bypass")
+    popup.title("Bypass")
 
     # center the window on the screen
     window_width = popup.winfo_reqwidth()
@@ -72,21 +72,21 @@ def show_popup2():
     popup.geometry("+{}+{}".format(position_right, position_down))
 
     # create larger buttons
-    button1 = tk.Button(popup, text="save activation files", command=save, width=20, height=5)
+    button1 = tk.Button(popup, text="Save activation files", command=save, width=20, height=5)
     button1.pack(pady=10)
 
-    button2 = tk.Button(popup, text="restore activation files", command=restore, width=20, height=5)
+    button2 = tk.Button(popup, text="Restore activation files", command=restore, width=20, height=5)
     button1.pack(pady=10)
     button2.pack()
     
-    button2 = tk.Button(popup, text="delete activation files", command=delete, width=20, height=5)
+    button2 = tk.Button(popup, text="Delete activation files", command=delete, width=20, height=5)
     button1.pack(pady=10)
     button2.pack()
 
 def build_fakefs():
-    messagebox.showinfo("", "Please put the device first in recovery mode and then into dfu mode after the device is in dfu click ok")
+    messagebox.showinfo("", "Please put the device in recovery mode first, and then into DFU Mode. After the device is in DFU Mode click OK")
     # Display a message box with a yes/no option
-    response = messagebox.askyesno("iphone?", "Do you have a A9 device?")
+    response = messagebox.askyesno("Question", "Do you have a A9 device?")
 
     # Check the user's response and execute the appropriate command
     if response == 1:  # Yes
@@ -107,12 +107,12 @@ def build_fakefs():
         os.system("./palera1n-macos-universal -cf")
     if response == 0:  # No
         os.system("./palera1n-macos-universal -cf")
-    messagebox.showinfo("", "After the device boots you can boot the fake fs")
+    messagebox.showinfo("", "After the device boots you can boot the Fake FS")
     
 def boot_fakefs():
-    messagebox.showinfo("", "Please put the device first in recovery mode and then into dfu mode after the device is in dfu click ok")
+    messagebox.showinfo("", "Please put the device in recovery mode first, and then into DFU Mode. After the device is in DFU Mode click OK")
     # Display a message box with a yes/no option
-    response = messagebox.askyesno("iphone?", "Do you have a A9 device?")
+    response = messagebox.askyesno("Question", "Do you have a A9 device?")
 
     # Check the user's response and execute the appropriate command
     if response == 1:  # Yes
@@ -170,7 +170,7 @@ def enterRecMode():
     os.system(f"./device/ideviceenterrecovery {LAST_CONNECTED_UDID}")
 
 def exitRecMode():
-    print("Kicking device out recovery mode...")
+    print("Kicking device out of recovery mode...")
     os.system("./device/irecovery -n")
 
 
@@ -191,9 +191,9 @@ def opentwitter():
     
 def delete():
 
-    messagebox.showinfo("?","Do you really want to delete all saved activation files?")
+    messagebox.showinfo("Question","Do you really want to delete all saved activation files?")
     os.system("bash ./delete.sh")
-    print("activation files deleted\n")
+    print("Activation files deleted\n")
     showinfo('!', 'done!')
         
 
@@ -218,10 +218,10 @@ def save():
 
     if os.path.exists(file_path):
         print("activation files saved\n")
-        showinfo('save Success!', 'activation files saved!')
+        showinfo('Save success!', 'Activation files saved!')
     else:
-        print("activation files not saved\n")
-        showinfo('save failed!', 'Save faild, try jailbreaking again!')
+        print("Activation files not saved\n")
+        showinfo('Save failed!', 'Save failed, try jailbreaking again!')
 
 
 
@@ -236,7 +236,7 @@ def restore():
         os.system("bash ./restore.sh")
 
         print("Device is bypassed\n")
-        showinfo('bypass Success!', 'Device is now bypassed!')
+        showinfo('Success', 'Device is now bypassed!')
         
 
     
@@ -259,38 +259,38 @@ label.place(x=0, y=0)
 
 #label
 my_label2 = Label(frame,
-                 text = "passcode Bypass")
+                 text = "Passcode bypass")
 my_label2.place(x=300, y=230)
 
 #label
 my_label3 = Label(frame,
-                 text = "ver 1.1")
+                 text = "Version 1.1")
 my_label3.place(x=10, y=420)
 
 
 
 cButton1 = tk.Button(frame,
-                   text="bypass ios 12-16.5",
+                   text="Bypass iOS 12-16.5",
                    command=show_popup2,
                    state="normal")
 cButton1.place(x=270, y=360)
 cButton5 = tk.Button(frame,
-                   text="enter recovery",
+                   text="Enter recovery",
                    command=enterRecMode,
                    state="normal")
 cButton5.place(x=10, y=10)
 cButton6 = tk.Button(frame,
-                 text="exit recovery",
+                 text="Exit recovery",
                  command=exitRecMode,
                  state="normal")
 cButton6.place(x=580, y=10)
 cButton7 = tk.Button(frame,
-                   text="start checkra1n",
+                   text="Start checkra1n",
                    command=startcheckra1n,
                    state="normal")
 cButton7.place(x=530, y=200)
 cButton9 = tk.Button(frame,
-                   text="start palera1n",
+                   text="Start palera1n",
                    command=show_popup,
                    state="normal")
 cButton9.place(x=50, y=200)
