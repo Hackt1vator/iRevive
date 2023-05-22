@@ -1,5 +1,5 @@
 # iRevive
-passcode bypass for ios 12-16 on macos(if you are on Linux use the Linux branch)
+Passcode bypass for iOS 12-16 on macOS (If you are on Linux use the Linux branch)
 <h1 align="center">
 
 
@@ -12,46 +12,57 @@ passcode bypass for ios 12-16 on macos(if you are on Linux use the Linux branch)
     <strong><a href="https://twitter.com/hackt1vator">Twitter</a></strong>
     •
     <strong><a   href="https://hackt1vator.github.io">Website</a></strong>
-<h3 align="center">Here you can download the Palera1n loader ipa: <strong><a href="https://nightly.link/palera1n/loader/workflows/build/main/palera1n.zip">Palera1n.ipa</a></strong></h3>
-<h3 align="center">!!!Warning! This is for educational porpuse only!!!</h3>
-<h3 align="center">Here you can donate the developer: <strong><a href="https://www.buymeacoffee.com/Hacktivator">buymeacoffee</a></strong></h3>
-<h3 align="center">How does it work: It boots the device with multiple patches required. On first run, it'll boot a ramdisk which dumps your onboard blob, creates a fakefs (if using semi tethered), installs the loader app, and patches your kernel. </h3>
+<h3 align="center">Here you can download the Palera1n loader IPA: <strong><a href="https://nightly.link/palera1n/loader/workflows/build/main/palera1n.zip">Palera1n.ipa</a></strong></h3>
+<h3 align="center">!!! Warning! This is for educational purposes only !!!</h3>
+<h3 align="center">Here you can donate to the developer: <strong><a href="https://www.buymeacoffee.com/Hacktivator">buymeacoffee</a></strong></h3>
+<h3 align="center">How it works: It boots the device with multiple patches required. On first run, it'll boot a ramdisk which dumps your onboard blob, creates a fakefs (if using semi tethered), installs the loader app, and patches your kernel. </h3>
 
-# installing(macos)
+# Installing (macOS)
 
-<h3 align"center">install here the Dependencies of Silver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
+<h3 align"center">Install here the dependencies of Sliver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
 <h3 align"center">Run bash (drag and drop here the file)
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">download the zip file from the releases and extract it
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">drag and drop the iRevive.app to the application folder
+<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">Download the ZIP file from the releases and extract it
+<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">Drag and drop the iRevive.app to the Applications folder
 <h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">Run these commands:
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -r /Applications/iRevive.app
-<h3 align"center"><h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -rd com.apple.quarantine /Applications/iRevive.app
-<h3 align"center"><h3 align"center"><h3 align"center">sudo xattr -d com.apple.quarantine /Applications/iRevive.app
-<h3 align"center"><h3 align"center">sudo xattr -r com.apple.quarantine /Applications/iRevive.app
-<h3 align"center">chmod 755 /Applications/iRevive.app
-<h3 align"center">now open the iRevive app
-<h3 align"center">new click for ios 12-14 start checkra1n and for ios 15-16 start palera1n
-<h3 align"center">When the device is jailbroken, you can click bypass ios 12-16 
-<h3 align"center">bypass done
+
+```
+sudo xattr -r /Applications/iRevive.app
+sudo xattr -rd com.apple.quarantine /Applications/iRevive.app
+sudo xattr -d com.apple.quarantine /Applications/iRevive.app
+sudo xattr -r com.apple.quarantine /Applications/iRevive.app
+chmod 755 /Applications/iRevive.app
+```
+
+<h3 align"center">Now open the iRevive app
+<h3 align"center">Now for iOS 12-14 click "start checkra1n" and for iOS 15-16 click "start palera1n"
+<h3 align"center">When the device is jailbroken, you can click bypass iOS 12-16 
+<h3 align"center">The bypass is now done
 
 
-# install with python 3 if the steps above didn't work for you(macos)
+# Install with python3 if the steps above didn't work for you (macOS)
 
-<h3 align"center">install here the Dependencies of Silver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
+<h3 align"center">Install the dependencies of Sliver, it should work for iRevive also: https://www.appletech752.com/dependencies.sh
 <h3 align"center">Run bash (drag and drop here the file)
 <h3 align"center">download iRevive and unzip it
 <h3 align"center">Open a terminal window and cd to the directory that iRevive was downloaded to.
-<h3 align"center">Run git init -b main
-<h3 align"center">Run sudo xattr -rd com.apple.quarantine ./*
-<h3 align"center">Run sudo xattr -d com.apple.quarantine ./*
-<h3 align"center">Run sudo chmod 755 ./*
-<h3 align"center">Now cd the device folder inside the iRevive folder and run the last 3 commands above again
+<h3 align"center">Run these commands:
+
+```
+git init -b main
+sudo xattr -rd com.apple.quarantine ./*
+sudo xattr -d com.apple.quarantine ./*
+sudo chmod 755 ./*
+```
+
+<h3 align"center">Now cd to the device folder inside the iRevive folder and run the last 3 commands above again
 <h3 align"center">cd the iRevive directory again
 <h3 align"center">to launch the app, run this in terminal:
-python3 iRevive.py
-<h3 align"center">now click for ios 12-14 start checkra1n and for ios 15-16 start palera1n
-<h3 align"center">When the device is jailbroken, you can click bypass ios 12-16 
-<h3 align"center">save the activation files and restore them after itunes restore
+
+`python3 iRevive.py`
+
+<h3 align"center">Now for iOS 12-14 click "start checkra1n" and for iOS 15-16 click "start palera1n"
+<h3 align"center">When the device is jailbroken, you can click bypass iOS 12-16 
+<h3 align"center">Save the activation files and restore them after iTunes restore
 
 
 
