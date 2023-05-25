@@ -69,6 +69,8 @@ sudo chmod 755 ./*
 
 # Credits
 
+- [veast-network](https://github.com/veast-network)
+: [pull request](https://github.com/Hackt1vator/iRevive/pull/3/files)
 
 Original palera1n credits:
 - [Nathan](https://github.com/verygenericname)
