@@ -12,7 +12,6 @@ Passcode bypass for iOS 12-16 on macOS (If you are on Linux use the Linux branch
     <strong><a href="https://twitter.com/hackt1vator">Twitter</a></strong>
     •
     <strong><a   href="https://hackt1vator.github.io">Website</a></strong>
-<h3 align="center">Here you can download the Palera1n loader IPA: <strong><a href="https://nightly.link/palera1n/loader/workflows/build/main/palera1n.zip">Palera1n.ipa</a></strong></h3>
 <h3 align="center">!!! Warning! This is for educational purposes only !!!</h3>
 <h3 align="center">Here you can donate to the developer: <strong><a href="https://www.buymeacoffee.com/Hacktivator">buymeacoffee</a></strong></h3>
 <h3 align="center">How it works: It boots the device with multiple patches required. On first run, it'll boot a ramdisk which dumps your onboard blob, creates a fakefs (if using semi tethered), installs the loader app, and patches your kernel. </h3>
