@@ -53,7 +53,7 @@ sudo xattr -d com.apple.quarantine ./*
 sudo chmod 755 ./*
 ```
 
-<h3 align"center">Now cd to the device folder inside the iRevive folder and run the last 3 commands above again
+<h3 align"center">Now cd to the device and ramdisk folder inside the iRevive folder and run the last 3 commands above again
 <h3 align"center">cd the iRevive directory again
 <h3 align"center">to launch the app, run this in terminal:
 
