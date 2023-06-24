@@ -71,7 +71,7 @@ def show_popup2():
     popup.geometry("+{}+{}".format(position_right, position_down))
 
     # create larger buttons
-    button1 = tk.Button(popup, text="save activation files", command=save, width=20, height=5)
+    button1 = tk.Button(popup, text="save activation files(Ramdisk)", command=save, width=20, height=5)
     button1.pack(pady=10)
 
     button2 = tk.Button(popup, text="restore activation files", command=restore, width=20, height=5)
@@ -103,7 +103,16 @@ def startcheckra1n():
 
 
 
-    
+def ramdisk():
+    iOSVer = askstring('Device iOS?', 'On what iOS version are you?')
+    os.system("bash ./ramdisk/sshrd.sh clean")
+    os.system(f"bash ./ramdisk/sshrd.sh {iOSVer}")
+    os.system("bash ./ramdisk/sshrd.sh boot")
+
+
+def exit():
+
+    os.system("bash ./ramdisk/sshrd.sh reboot")
 
 def exitRecMode():
     print("Kicking device out recovery mode...")
@@ -139,7 +148,7 @@ def delete():
 def save():
 
 
-    showinfo("", "We will now save the activation files. Be sure to jailbreak your device first")
+    showinfo("", "We will now save the activation files. Be sure to put your device into ramdisk mode")
     print("Starting save")
         
 
@@ -204,7 +213,7 @@ my_label3.place(x=10, y=700)
 
 
 cButton1 = tk.Button(frame,
-                   text="bypass ios 12-16.5",
+                   text="bypass ios 14-16.5",
                    command=show_popup2,
                    state="normal")
 cButton1.place(x=270, y=600)
@@ -223,6 +232,16 @@ cButton9 = tk.Button(frame,
                    command=show_popup,
                    state="normal")
 cButton9.place(x=50, y=400)
+cButton10 = tk.Button(frame,
+                   text="Ramdisk(ios 14-16)",
+                   command=ramdisk,
+                   state="normal")
+cButton10.place(x=200, y=20)
+cButton10 = tk.Button(frame,
+                   text="Exit Ramdisk",
+                   command=exit,
+                   state="normal")
+cButton10.place(x=400, y=20)
 
 
 cbeginExploit2 = tk.Button(frame,
@@ -230,6 +249,7 @@ cbeginExploit2 = tk.Button(frame,
                    command=opentwitter,
                    state="normal")
 cbeginExploit2.place(x=850, y=700)
+
 
 root.geometry("1000x800")
 
