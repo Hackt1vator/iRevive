@@ -1,5 +1,5 @@
 # iRevive
-passcode bypass for ios 12-16 on Linux
+passcode bypass for ios 14-16 on Linux
 <h1 align="center">
 
 
@@ -24,7 +24,7 @@ passcode bypass for ios 12-16 on Linux
 <h3 align"center">Open a new terminal window and cd to the iRevive folder.(do not close the old terminal)
 <h3 align"center">Run git init -b main
 <h3 align"center">Run sudo chmod 755 ./*
-<h3 align"center">Now cd the device folder inside the iRevive folder and run sudo chmod 755 ./* again
+<h3 align"center">Now cd the device and ramdisk folder inside the iRevive folder and run sudo chmod 755 ./* again
 <h3 align"center">cd the irevive directory again
 <h3 align"center">to launch the app, run this in terminal: python3 iRevive.py
 <h3 align"center">now click for ios 12-14 start checkra1n and for ios 15-16 start palera1n
