@@ -8,6 +8,11 @@ cd "`dirname "$0"`"
 
 echo "Mounting"
 ./device/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p 4444 "root@localhost" 'mount -o rw,union,update /'
+
+if [ $? -ne 0 ]; then
+  osascript -e 'display dialog "Error: Failed to mount filesystem" with title "Error"'
+fi
+
 echo "Mounted!"
 
 ./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 rm -rf /var/mobile/Media/Downloads/1
@@ -63,3 +68,4 @@ records=$ACTIVATION_RECORDS/Library/activation_records
 
  ./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 reboot
 
+osascript -e 'display dialog "Activation files restored!" with title "Success"'

@@ -72,7 +72,7 @@ def show_popup2():
     popup.geometry("+{}+{}".format(position_right, position_down))
 
     # create larger buttons
-    button1 = tk.Button(popup, text="Save activation files", command=save, width=20, height=5)
+    button1 = tk.Button(popup, text="Save activation files(Ramdisk)", command=save, width=20, height=5)
     button1.pack(pady=10)
 
     button2 = tk.Button(popup, text="Restore activation files", command=restore, width=20, height=5)
@@ -148,7 +148,17 @@ def startcheckra1n():
 
 
 
-    
+def ramdisk():
+    iOSVer = askstring('Device iOS?', 'On what iOS version are you?')
+    os.system("bash ./ramdisk/sshrd.sh clean")
+    os.system(f"bash ./ramdisk/sshrd.sh {iOSVer}")
+    os.system("bash ./ramdisk/sshrd.sh boot")
+
+
+def exit():
+
+    os.system("bash ./ramdisk/sshrd.sh reboot")
+
 
 def enterRecMode():
 
@@ -205,7 +215,7 @@ def delete():
 def save():
 
 
-    showinfo("", "We will now save the activation files. Be sure to jailbreak your device first")
+    showinfo("", "We will now save the activation files. Be sure to put your device into ramdisk mode")
     print("Starting save")
         
 
@@ -270,7 +280,7 @@ my_label3.place(x=10, y=420)
 
 
 cButton1 = tk.Button(frame,
-                   text="Bypass iOS 12-16.5",
+                   text="Bypass iOS 14-16.5",
                    command=show_popup2,
                    state="normal")
 cButton1.place(x=270, y=360)
@@ -294,7 +304,16 @@ cButton9 = tk.Button(frame,
                    command=show_popup,
                    state="normal")
 cButton9.place(x=50, y=200)
-
+cButton10 = tk.Button(frame,
+                   text="Ramdisk(ios 14-16)",
+                   command=ramdisk,
+                   state="normal")
+cButton10.place(x=200, y=20)
+cButton10 = tk.Button(frame,
+                   text="Exit Ramdisk",
+                   command=exit,
+                   state="normal")
+cButton10.place(x=400, y=20)
 
 cbeginExploit2 = tk.Button(frame,
                    text="Twitter!",

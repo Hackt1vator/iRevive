@@ -1,28 +1,46 @@
+#!/bin/bash
+
 rm -rf ~/.ssh/known_hosts
 
-# Ändere das aktuelle Arbeitsverzeichnis
-cd "`dirname "$0"`"
+cd "$(dirname "$0")" || exit
 
-./device/iproxy 4444:44 > /dev/null 2>&1 &
+run_ssh_command() {
+  ./device/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@localhost -p2222 "$@"
+}
+
+copy_files() {
+  ./device/sshpass -p 'alpine' scp -rP 2222 -o StrictHostKeyChecking=no root@localhost:"$1" "$2"
+}
+
+./device/iproxy 2222:22 > /dev/null 2>&1 &
 
 echo "Mounting"
-./device/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p 4444 "root@localhost" 'mount -o rw,union,update /'
+if ! run_ssh_command 'mount_filesystems'; then
+  osascript -e 'display dialog "Error: Failed to mount filesystems" with title "Error"'
+fi
 echo "Mounted!"
 
-INTERNAL=$(./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 find /private/var/containers/Data/System -name internal)
+if ! copy_files "/mnt2/mobile/Media/1/files/activation_record.plist" ./files/; then
+  osascript -e 'display dialog "Error: Failed to copy activation_record.plist" with title "Error"'
+fi
 
-ACTIVATION_RECORDS=$(./device/sshpass -p alpine ssh -o StrictHostKeyChecking=no root@localhost -p 4444 find /private/var/containers/Data/System -name activation_records)
+if ! copy_files "/mnt2/root/Library/Lockdown/data_ark.plist" ./files/; then
+  osascript -e 'display dialog "Error: Failed to copy data_ark.plist" with title "Error"'
+fi
 
-ACTIVATION_RECORDS=${INTERNAL%?????????????????}
+if ! copy_files "/mnt2/mobile/Library/FairPlay/" ./files/; then
+  osascript -e 'display dialog "Error: Failed to copy FairPlay folder" with title "Error"'
+fi
 
-records=$ACTIVATION_RECORDS/Library/activation_records
+if ! copy_files "/mnt2/wireless/Library/Preferences/com.apple.commcenter.device_specific_nobackup.plist/" ./files/; then
+  osascript -e 'display dialog "Error: Failed to copy com.apple.commcenter.device_specific_nobackup.plist" with title "Error"'
+fi
 
-./device/sshpass -p alpine scp -rP 4444 -o StrictHostKeyChecking=no root@localhost:$records/activation_record.plist ./files/
+if ! run_ssh_command '/sbin/reboot'; then
+  osascript -e 'display dialog "Error: Failed to reboot" with title "Error"'
+fi
 
-./device/sshpass -p alpine scp -rP 4444 -o StrictHostKeyChecking=no root@localhost:$INTERNAL/data_ark.plist ./files/
+osascript -e 'display dialog "Activation files saved!" with title "Success"'
 
-
-./device/sshpass -p alpine scp -rP 4444 -o StrictHostKeyChecking=no root@localhost:/private/var/mobile/Library/FairPlay/ ./files/
-
-./device/sshpass -p alpine scp -rP 4444 -o StrictHostKeyChecking=no root@localhost:/private/var/wireless/Library/Preferences/com.apple.commcenter.device_specific_nobackup.plist/ ./files/
+kill %1 > /dev/null 2>&1
 
