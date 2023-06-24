@@ -1,5 +1,5 @@
 # iRevive
-Passcode bypass for iOS 12-16 on macOS (If you are on Linux use the Linux branch)
+Passcode bypass for iOS 14-16 on macOS (If you are on Linux use the Linux branch)
 <h1 align="center">
 
 
