@@ -12,6 +12,8 @@ copy_files() {
   ./device/sshpass -p 'alpine' scp -rP 2222 -o StrictHostKeyChecking=no root@localhost:"$1" "$2"
 }
 
+mkdir -p ./files
+
 ./device/iproxy 2222:22 > /dev/null 2>&1 &
 
 echo "Mounting"
@@ -20,11 +22,12 @@ if ! run_ssh_command 'mount_filesystems'; then
 fi
 echo "Mounted!"
 
-if ! copy_files "/mnt2/mobile/Media/1/files/activation_record.plist" ./files/; then
+
+if ! copy_files "/mnt2/containers/Data/System/*/Library/activation_records/activation_record.plist" ./files/; then
   osascript -e 'display dialog "Error: Failed to copy activation_record.plist" with title "Error"'
 fi
 
-if ! copy_files "/mnt2/root/Library/Lockdown/data_ark.plist" ./files/; then
+if ! copy_files "/mnt2/containers/Data/System/*/Library/internal/data_ark.plist" ./files/; then
   osascript -e 'display dialog "Error: Failed to copy data_ark.plist" with title "Error"'
 fi
 
